@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Estimator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Paste the updated CSS here */
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <div id="insurance-form">
+            <h1>Insurance Value Estimator</h1>
+            <form>
+                <label for="province">Province:</label>
+                <select id="province" name="province" onchange="updateMap()">
+                    <option value="AB">Alberta</option>
+                    <option value="BC">British Columbia</option>
+                    <option value="MB">Manitoba</option>
+                    <option value="NB">New Brunswick</option>
+                    <option value="NL">Newfoundland and Labrador</option>
+                    <option value="NS">Nova Scotia</option>
+                    <option value="ON">Ontario</option>
+                    <option value="PE">Prince Edward Island</option>
+                    <option value="QC">Quebec</option>
+                    <option value="SK">Saskatchewan</option>
+                </select>
+
+                <label for="insurance-company">Insurance Company:</label>
+                <select id="insurance-company" name="insurance-company">
+                    <option value="Company 1">Company 1</option>
+                    <option value="Company 2">Company 2</option>
+                    <option value="Company 3">Company 3</option>
+                    <option value="Company 4">Company 4</option>
+                    <option value="Company 5">Company 5</option>
+                    <option value="Company 6">Company 6</option>
+                    <option value="Company 7">Company 7</option>
+                    <option value="Company 8">Company 8</option>
+                    <option value="Company 9">Company 9</option>
+                    <option value="Company 10">Company 10</option>
+                </select>
+
+                <label for="car_type">Car Type:</label>
+                <input type="text" id="car_type" name="car_type">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age">
+                <button type="button" onclick="getEstimate()">Get Estimate</button>
+            </form>
+            <p id="result"></p>
+        </div>
+
+        <div id="map"></div>
+
+        <div id="chatbot">
+            <h2>Ask the Cloud Bot</h2>
+            <input type="text" id="chatbot-input" placeholder="Ask a question...">
+            <button id="chatbot-submit" onclick="askBot()">Ask</button>
+            <p id="chatbot-response"></p>
+        </div>
+    </div>
+
+    <script>
+        /* Initialize and update the map */
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: {lat: 56.1304, lng: -106.3468}  // Centered on Canada
+            });
+        }
+
+        function updateMap() {
+            const province = document.getElementById('province').value;
+            let latLng;
+
+            switch(province) {
+                case "AB":
+                    latLng = {lat: 53.9333, lng: -116.5765};
+                    break;
+                case "BC":
+                    latLng = {lat: 53.7267, lng: -127.6476};
+                    break;
+                case "MB":
+                    latLng = {lat: 49.8951, lng: -97.1384};
+                    break;
+                case "NB":
+                    latLng = {lat: 46.5653, lng: -66.4619};
+                    break;
+                case "NL":
+                    latLng = {lat: 53.1355, lng: -57.6604};
+                    break;
+                case "NS":
+                    latLng = {lat: 44.6820, lng: -63.7443};
+                    break;
+                case "ON":
+                    latLng = {lat: 51.2538, lng: -85.3232};
+                    break;
+                case "PE":
+                    latLng = {lat: 46.5107, lng: -63.4168};
+                    break;
+                case "QC":
+                    latLng = {lat: 52.9399, lng: -73.5491};
+                    break;
+                case "SK":
+                    latLng = {lat: 52.9399, lng: -106.4509};
+                    break;
+            }
+
+            map.setCenter(latLng);
+            map.setZoom(6);
+        }
+
+        /* Handle the insurance estimate logic */
+        function getEstimate() {
+            const carType = document.getElementById('car_type').value;
+            const age = document.getElementById('age').value;
+            const insuranceCompany = document.getElementById('insurance-company').value;
+
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ car_type: carType, age: age, insurance_company: insuranceCompany })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').textContent = 'Estimated Insurance Value: ' + data.insurance_value;
+            });
+        }
+
+        /* Handle chatbot logic */
+        function askBot() {
+            const question = document.getElementById('chatbot-input').value;
+
+            fetch('/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ question: question })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('chatbot-response').textContent = 'Bot Response: ' + data.answer;
+            });
+        }
+    </script>
+</body>
+</html>

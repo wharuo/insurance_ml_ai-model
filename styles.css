@@ -1,0 +1,140 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c2c2c;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Container for the form and map */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Form Styles */
+#insurance-form {
+    padding: 20px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #5a5a5a;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    background-color: #004085;
+}
+
+/* Map and Chatbot Styles */
+#map {
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+#chatbot {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#chatbot-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#chatbot-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+#chatbot-submit:hover {
+    background-color: #0056b3;
+}
+
+#chatbot-submit:active {
+    background-color: #004085;
+}
+
+/* Result Display */
+#result, #chatbot-response {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #2c2c2c;
+}

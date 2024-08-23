@@ -1,0 +1,65 @@
+{
+    "companies": [
+      {
+        "name": "Manulife",
+        "icon": "icons/manulife.png",
+        "info": "Manulife is one of the largest insurance companies in Canada, providing a wide range of financial products and services.",
+        "link": ""
+      },
+      {
+        "name": "Great-West Lifeco",
+        "icon": "icons/great-west.png",
+        "info": "Great-West Lifeco offers life insurance, health insurance, and retirement products. It operates in multiple countries.",
+        "link": "conection api or link ://www.mordorintelligence.com/pt/industry-reports/life-non-life-insurance-market-in-canada"
+      },
+      {
+        "name": "Sun Life Financial",
+        "icon": "icons/sun-life.png",
+        "info": "Sun Life Financial provides life insurance, health insurance, and investment products. It is a global financial services company.",
+        "link": "conection api or link "
+      },
+      {
+        "name": "Fairfax Financial",
+        "icon": "icons/fairfax.png",
+        "info": "Fairfax Financial is a Canadian financial holding company engaged in property, casualty insurance, and reinsurance.",
+        "link": "conection api or link "
+      },
+      {
+        "name": "Intact Financial",
+        "icon": "icons/intact.png",
+        "info": "Intact Financial Corporation is the largest provider of property and casualty insurance in Canada.",
+        "link": "conection api or link "
+      },
+      {
+        "name": "Industrial Alliance",
+        "icon": "icons/industrial-alliance.png",
+        "info": "Industrial Alliance offers life and health insurance, savings and retirement plans, mutual and segregated funds, auto and home insurance.",
+        "link": "conection api or link "
+      },
+      {
+        "name": "Power Corporation",
+        "icon": "icons/power-corp.png",
+        "info": "Power Corporation of Canada is a diversified international management and holding company with interests in financial services.",
+        "link": "conection api or link "
+      },
+      {
+        "name": "RBC Insurance",
+        "icon": "icons/rbc.png",
+        "info": "RBC Insurance provides a wide range of life, health, home, auto, travel, wealth, and reinsurance products.",
+        "link": "conection api or link "
+      },
+      {
+        "name": "TD Insurance",
+        "icon": "icons/td.png",
+        "info": "TD Insurance offers home, auto, life, health, travel, and credit protection insurance products.",
+        "link": "conection api or link "
+      },
+      {
+        "name": "Desjardins",
+        "icon": "icons/desjardins.png",
+        "info": "Desjardins Group is the largest cooperative financial group in Canada, offering a wide range of financial products and services.",
+        "link": "conection api or link "
+      }
+    ]
+  }
+  
